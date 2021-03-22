@@ -41,6 +41,7 @@ mod macros;
 pub mod test_helpers;
 
 mod bitcoin;
+pub mod monero;
 mod byte_str;
 mod collections;
 #[cfg(feature = "crypto")]

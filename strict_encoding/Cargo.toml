@@ -29,7 +29,7 @@ chrono = { version = "0.4", optional = true }
 
 # Farcaster
 # monero = "0.10.0"
-monero = { version = "0.10.0", git = "https://github.com/zkao/monero-rs", branch = "master" }
+monero = { path = "../../monero-rs" }
 
 [features]
 default = ["chrono", "derive", "crypto", "ed25519-dalek"]

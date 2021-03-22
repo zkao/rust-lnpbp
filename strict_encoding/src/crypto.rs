@@ -15,28 +15,7 @@ use std::io;
 
 #[cfg(feature = "ed25519-dalek")]
 use ed25519_dalek::ed25519::signature::Signature;
-
-
-use crate::{Error, Strategy, strategies, StrictDecode, StrictEncode};
-impl Strategy for monero::PublicKey {
-    type Strategy = strategies::UsingUniformAddr;
-}
-
-// impl StrictEncode for monero::PublicKey {
-//     #[inline]
-//     fn strict_encode<E: io::Write>(&self, mut e: E) -> Result<usize, Error> {
-//         Ok(e.write(&self.as_bytes()[..])?)
-//     }
-// }
-
-// impl StrictDecode for monero::PublicKey {
-//     #[inline]
-//     fn strict_decode<D: io::Read>(d: D) -> Result<Self, Error> {
-//         Self::from_bytes(d).map_err(|_| {
-//             Error::DataIntegrityError("Invalid Monero PublicKey".to_string())
-//         })
-//     }
-// }
+use crate::{Error, StrictDecode, StrictEncode};
 
 #[cfg(feature = "ed25519-dalek")]
 impl StrictEncode for ed25519_dalek::PublicKey {
