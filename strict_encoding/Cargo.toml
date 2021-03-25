@@ -28,8 +28,7 @@ grin_secp256k1zkp = { version = "0.7", optional = true }
 chrono = { version = "0.4", optional = true }
 
 # Farcaster
-# monero = "0.10.0"
-monero = { path = "../../monero-rs" }
+monero = { git = "https://github.com/monero-rs/monero-rs", branch = "master"}
 
 [features]
 default = ["chrono", "derive", "crypto", "ed25519-dalek"]

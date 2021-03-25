@@ -1,4 +1,4 @@
-use super::{Error, StrictEncode, StrictDecode, Strategy};
+use super::{Error, Strategy, StrictDecode, StrictEncode};
 use std::io;
 
 pub struct MoneroConsensus;
@@ -17,7 +17,9 @@ where
 {
     #[inline]
     fn strict_encode<E: io::Write>(&self, mut e: E) -> Result<usize, Error> {
-        self.as_inner().consensus_encode(&mut e).map_err(Error::from)
+        self.as_inner()
+            .consensus_encode(&mut e)
+            .map_err(Error::from)
     }
 }
 
@@ -37,4 +39,3 @@ impl From<monero::consensus::encode::Error> for Error {
         Error::DataIntegrityError(e.to_string())
     }
 }
-

@@ -42,8 +42,8 @@ required-features = ["cli"]
 # -----------------------------------------
 amplify = { version = "3", features = ["stringly_conversions", "std"] }
 amplify_derive = "2.4.3"
-strict_encoding = { version = "1", features = ["miniscript"] }
-strict_encoding_derive = "1"
+strict_encoding = { path = "./strict_encoding" }
+strict_encoding_derive = { path = "./strict_encoding/derive" }
 lightning_encoding = "0.4.0-beta.1"
 client_side_validation = "0.4"
 descriptor-wallet = "0.4"
